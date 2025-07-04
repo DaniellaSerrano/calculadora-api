@@ -59,3 +59,13 @@ class PotenciaRequest(BaseModel):
     """
     a: float
     b: float
+    
+class RaizRequest(BaseModel):    
+    """
+    Modelo de datos para la operación de potencia. 
+    
+    Attributes:
+        a (float): El numero que queremos sacar raíz.    
+    """
+    
+    a: float

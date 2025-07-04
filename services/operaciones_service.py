@@ -1,7 +1,8 @@
 """
 Servicios que implementan la lógica de negocio para operaciones matemáticas.
 """
-from fastapi import HTTPException
+import math #estandar 
+from fastapi import HTTPException #terceros
 
 def sumar(a: float, b: float) -> float:
     """
@@ -92,3 +93,17 @@ def factorial(n: int) -> int:
     for i in range(1, n + 1):
         resultado *= i
     return resultado
+
+def Raiz(a:float) -> float:
+    """
+    Calcula la raíz cuadrada de un numero a.
+
+    Args:
+        a (float): Número (no negativo).
+        
+    Raises:
+        ValueError: Si el numero es negativo.
+    """
+    if a < 0 :
+        raise ValueError ("No se puede calcular la raíz cuadrada de un número negativo.")
+    return math.sqrt(a)

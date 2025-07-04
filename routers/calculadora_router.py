@@ -9,8 +9,8 @@ Router de operaciones matemáticas para la API de calculadora.
 # Esto es un comentario. 
 
 from fastapi import APIRouter
-from models.request_models import SumaRequest, RestaRequest, MultiplicaciónRequest, DivisiónRequest, PotenciaRequest
-from services.operaciones_service import sumar, factorial, restar, multiplicar, dividir, potencia
+from models.request_models import SumaRequest, RestaRequest, MultiplicaciónRequest, DivisiónRequest, PotenciaRequest, RaizRequest
+from services.operaciones_service import sumar, restar, multiplicar, dividir, potencia, raiz, factorial
 
 router = APIRouter()
 
@@ -98,7 +98,28 @@ def ruta_potencia(datos:PotenciaRequest):
     """ 
     resultado = potencia(datos.a,datos.b)
     return{"resultado": resultado}
-  
+
+@router.post("/raiz")
+def ruta_raiz(datos: RaizRequest):
+    """
+    Calcula la raíz cuadrada de un número. 
+
+    Args:
+        datos (RaizRequest): Cuerpo con el número.
+
+    Returns:
+        dict: Resultado de la raíz.
+        
+    Raises: 
+        HTTPExpetion: Si el número es negativo. 
+    
+    """   
+    try:
+        resultado = raiz(datos.a)
+        return{"resultado"=resultado}
+    except ValueError as error
+        raise HTTPException(status_code=400, detail=str(error))
+
 @router.get("/factorial/{n}")
 def ruta_factorial(n: int):
     """
