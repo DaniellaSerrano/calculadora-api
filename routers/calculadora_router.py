@@ -117,7 +117,7 @@ def ruta_raiz(datos: RaizRequest):
     try:
         resultado = raiz(datos.a)
         return{"resultado": resultado}
-    except ValueError as error
+    except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error))
 
 @router.get("/factorial/{n}")
