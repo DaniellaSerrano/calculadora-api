@@ -26,4 +26,14 @@ class RestaResquest(BaseModel):
     a: float
     b: float
     
+class MultiplicaciónRequest(BaseModel):
+    """
+    Modelo de datos para la operación de multiplicación. 
+    
+    Attributes:
+        a (float): Primer número.
+        b (float): Segundo número.
+    """
+    a: float
+    b: float
     

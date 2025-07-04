@@ -31,6 +31,19 @@ def restar(a:float, b:float) -> float:
     
     return a - b
 
+def multiplicar(a:float, b:float) -> float:
+    """
+    Multiplicación dos números.
+
+    Args:
+        a (float): Primer número.
+        b (float): Segundo número.
+
+    Returns:
+        float: Resultado de la multiplicación.
+    """ 
+    return a * b
+
 def factorial(n: int) -> int:
     """
     Calcula el factorial de un número entero no negativo.
