@@ -44,6 +44,24 @@ def multiplicar(a:float, b:float) -> float:
     """ 
     return a * b
 
+def división(a:float, b:float) -> float:
+    """
+    División dos números.
+
+    Args:
+        a (float): Diviendo.
+        b (float): Divisor.
+
+    Returns:
+        float: Resultado de la división.
+        
+    Raises:
+        ValueError: Si b es cero. 
+    """ 
+    if b==0:
+        raise ValueError("No se puede dividir entre cero.")
+    return a / b 
+
 def factorial(n: int) -> int:
     """
     Calcula el factorial de un número entero no negativo.

@@ -1,10 +1,16 @@
 """
-Router de operaciones matemáticas para la API de calculadora.
+Este es un comentario de varias líneas,
+usuado comunmente para describir las funciones. 
 """
 
+"""
+Router de operaciones matemáticas para la API de calculadora.
+"""
+# Esto es un comentario. 
+
 from fastapi import APIRouter
-from models.request_models import SumaRequest, RestaRequest, MultiplicaciónRequest
-from services.operaciones_service import sumar, factorial, restar, multiplicar
+from models.request_models import SumaRequest, RestaRequest, MultiplicaciónRequest, DivisiónRequest
+from services.operaciones_service import sumar, factorial, restar, multiplicar, dividir
 
 router = APIRouter()
 
@@ -21,7 +27,8 @@ def ruta_suma(datos: SumaRequest):
     """
 
     resultado = sumar(datos.a, datos.b)
-    return {"resultado": resultado}
+    return {"resultado": resultado} #Es un diccionario de Python, que FastAPI convierte automaticamnt a JSON.
+    # En este caso el diccionario {} con la palabra clave "resultado"
 
 @router.post("/resta")
 def ruta_resta(datos: RestaResquest):
@@ -54,6 +61,30 @@ def ruta_multiplicacion(datos: MultiplicaciónRequest):
     resultado = multiplicar(datos.a,datos.b)
     return {"resultado": resultado}
 
+@router.post("/división")
+def ruta_division(datos: DivisiónRequest):
+    
+    """
+    Calcula la división de dos números.
+
+    Args:
+        datos (DivisiónRequest): Cuerpo de la petición con dos números.
+
+    Returns:
+        dict: Resultado de la división.
+        
+    Raises: 
+        HTTPExpetion: Si el divisor es cero. 
+    
+    """
+    
+    try:
+        resultado = dividir(datos.a,datos.b)
+        return {"resultado": resultado}
+    
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error))     
+  
 @router.get("/factorial/{n}")
 def ruta_factorial(n: int):
     """
@@ -69,4 +100,4 @@ def ruta_factorial(n: int):
         HTTPException: Si el número es negativo.
     """
     resultado = factorial(n)
-    return {"resultado": resultado}
+    return {"resultado": resultado} 

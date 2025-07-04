@@ -37,3 +37,15 @@ class MultiplicaciónRequest(BaseModel):
     a: float
     b: float
     
+class DivisiónRequest(BaseModel):
+    """
+    Modelo de datos para la operación de división. 
+    
+    Attributes:
+        a (float): Primer número.
+        b (float): Segundo número.
+    """
+    
+    a: float
+    b: float
+    
