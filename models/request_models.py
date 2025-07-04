@@ -49,3 +49,13 @@ class DivisiónRequest(BaseModel):
     a: float
     b: float
     
+class PotenciaRequest(BaseModel):
+    """
+    Modelo de datos para la operación de potencia. 
+    
+    Attributes:
+        a (float): Primer número.
+        b (float): Segundo número.
+    """
+    a: float
+    b: float

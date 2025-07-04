@@ -27,8 +27,6 @@ def restar(a:float, b:float) -> float:
     Returns:
         float: Resultado de la resta.
     """
-    
-    
     return a - b
 
 def multiplicar(a:float, b:float) -> float:
@@ -61,6 +59,19 @@ def división(a:float, b:float) -> float:
     if b==0:
         raise ValueError("No se puede dividir entre cero.")
     return a / b 
+
+def potencia(a:float, b:float) -> float
+    """
+    Potencia de a ^ b.
+
+    Args:
+        a (float): Base.
+        b (float): Exponente.
+
+    Returns:
+        float: Resultado de a elevado a la b.
+    """ 
+    return a ** b
 
 def factorial(n: int) -> int:
     """
