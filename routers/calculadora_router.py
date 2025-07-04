@@ -3,8 +3,8 @@ Router de operaciones matemáticas para la API de calculadora.
 """
 
 from fastapi import APIRouter
-from models.request_models import SumaRequest
-from services.operaciones_service import sumar, factorial
+from models.request_models import SumaRequest, RestaRequest
+from services.operaciones_service import sumar, factorial, restar
 
 router = APIRouter()
 
@@ -22,6 +22,23 @@ def ruta_suma(datos: SumaRequest):
 
     resultado = sumar(datos.a, datos.b)
     return {"resultado": resultado}
+
+@router.post("/resta")
+def ruta_resta(datos: RestaResquest):
+    
+    """
+    Calcula la resta de dos números.
+
+    Args:
+        datos (RestaRequest): Cuerpo de la petición con dos números.
+
+    Returns:
+        dict: Resultado de la resta.
+    """
+      
+    resultado = restar(datos.a,datos.b)
+    return {"resultado": resultado}
+
 
 @router.get("/factorial/{n}")
 def ruta_factorial(n: int):

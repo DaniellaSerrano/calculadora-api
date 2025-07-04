@@ -14,3 +14,16 @@ class SumaRequest(BaseModel):
     """
     a: float
     b: float
+
+class RestaResquest(BaseModel):
+    """
+    Modelo de datos para la operación de resta. 
+    
+    Attributes:
+        a (float): Primer número.
+        b (float): Segundo número.
+    """
+    a: float
+    b: float
+    
+    
