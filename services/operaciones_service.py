@@ -43,7 +43,7 @@ def multiplicar(a:float, b:float) -> float:
     """ 
     return a * b
 
-def división(a:float, b:float) -> float:
+def dividir(a:float, b:float) -> float:
     """
     División dos números.
 
@@ -61,7 +61,7 @@ def división(a:float, b:float) -> float:
         raise ValueError("No se puede dividir entre cero.")
     return a / b 
 
-def potencia(a:float, b:float) -> float
+def potencia(a:float, b:float) -> float:
     """
     Potencia de a ^ b.
 
@@ -94,7 +94,7 @@ def factorial(n: int) -> int:
         resultado *= i
     return resultado
 
-def Raiz(a:float) -> float:
+def raiz(a:float) -> float:
     """
     Calcula la raíz cuadrada de un numero a.
 

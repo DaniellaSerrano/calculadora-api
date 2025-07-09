@@ -15,7 +15,7 @@ class SumaRequest(BaseModel):
     a: float
     b: float
 
-class RestaResquest(BaseModel):
+class RestaRequest(BaseModel):
     """
     Modelo de datos para la operación de resta. 
     
@@ -26,7 +26,7 @@ class RestaResquest(BaseModel):
     a: float
     b: float
     
-class MultiplicaciónRequest(BaseModel):
+class MultiplicacionRequest(BaseModel):
     """
     Modelo de datos para la operación de multiplicación. 
     
@@ -37,7 +37,7 @@ class MultiplicaciónRequest(BaseModel):
     a: float
     b: float
     
-class DivisiónRequest(BaseModel):
+class DivisionRequest(BaseModel):
     """
     Modelo de datos para la operación de división. 
     

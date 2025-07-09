@@ -9,7 +9,7 @@ Router de operaciones matemáticas para la API de calculadora.
 # Esto es un comentario. 
 
 from fastapi import APIRouter
-from models.request_models import SumaRequest, RestaRequest, MultiplicaciónRequest, DivisiónRequest, PotenciaRequest, RaizRequest
+from models.request_models import SumaRequest, RestaRequest, MultiplicacionRequest, DivisionRequest, PotenciaRequest, RaizRequest
 from services.operaciones_service import sumar, restar, multiplicar, dividir, potencia, raiz, factorial
 
 router = APIRouter()
@@ -31,7 +31,7 @@ def ruta_suma(datos: SumaRequest):
     # En este caso el diccionario {} con la palabra clave "resultado"
 
 @router.post("/resta")
-def ruta_resta(datos: RestaResquest):
+def ruta_resta(datos: RestaRequest):
     
     """
     Calcula la resta de dos números.
@@ -46,8 +46,8 @@ def ruta_resta(datos: RestaResquest):
     resultado = restar(datos.a,datos.b)
     return {"resultado": resultado}
 
-@router.post("/multiplicación")
-def ruta_multiplicacion(datos: MultiplicaciónRequest):
+@router.post("/multiplicacion")
+def ruta_multiplicacion(datos: MultiplicacionRequest):
     
     """
     Calcula la multiplicación de dos números.
@@ -61,8 +61,8 @@ def ruta_multiplicacion(datos: MultiplicaciónRequest):
     resultado = multiplicar(datos.a,datos.b)
     return {"resultado": resultado}
 
-@router.post("/división")
-def ruta_division(datos: DivisiónRequest):
+@router.post("/division")
+def ruta_division(datos: DivisionRequest):
     
     """
     Calcula la división de dos números.
